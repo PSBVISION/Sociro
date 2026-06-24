@@ -14,11 +14,13 @@ const Layout = () => {
         />
       )}
       <Sidebar isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
-      <div className="flex-1 p-4">
+      <div className="flex-1 overflow-hidden flex flex-col">
         {/* Top Bar */}
-        <header>
+        <header className="h-16 bg-white border-b border-slate-200 flex items-center px-4 md:px-8 gap-4">
         </header>
-          <main><Outlet/></main>
+          <main className="flex-1 overflow-auto p-4 sm:p-6 md:p-8">
+            <Outlet />
+            </main>
       </div>
     </div>
   );
