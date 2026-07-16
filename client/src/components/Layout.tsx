@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
+import { MenuIcon } from "lucide-react";
 
 const Layout = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,6 +18,9 @@ const Layout = () => {
       <div className="flex-1 overflow-hidden flex flex-col">
         {/* Top Bar */}
         <header className="h-16 bg-white border-b border-slate-200 flex items-center px-4 md:px-8 gap-4">
+          <button className="md:hidden p-2 -ml-2 text-slate-500" onClick={() => setIsMobileMenuOpen(true)}>
+            <MenuIcon className="size-6"/>
+          </button>
         </header>
           <main className="flex-1 overflow-auto p-4 sm:p-6 md:p-8">
             <Outlet />
