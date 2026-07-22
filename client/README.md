@@ -1,5 +1,5 @@
 # Sociro
-# Social Media Scheduler
+# Social Media Scheduler multiple platforms like twitter, facebook, instagram, linkedin, pinterest, tiktok, youtube shorts, reddit, quora, telegram, discord and more.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
