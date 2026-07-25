@@ -1,6 +1,6 @@
 # Sociro
 ## Social Media Scheduler multiple platforms like twitter, facebook, instagram, linkedin and youtube .
-
+### Sociro is a social media scheduling tool that allows users to schedule posts across multiple platforms including Twitter, Facebook, Instagram, LinkedIn, and YouTube. It provides a user-friendly interface for managing social media content and optimizing posting times for maximum engagement.  
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
