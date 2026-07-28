@@ -1,9 +1,18 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { MenuIcon } from "lucide-react";
 
+const pageTitles: Record<string, string> = {
+  "/dashboard": "Dashboard",
+  "/accounts": "Social Accounts",
+  "/schedule": "Post Scheduler",
+  "/ai-composer": "AI Composer",
+}
+
 const Layout = () => {
+  const location = useLocation();
+  const title = pageTitles[location.pathname] || "Dashboard";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div className="flex h-screen bg-slate-50">
@@ -25,7 +34,7 @@ const Layout = () => {
             <MenuIcon className="size-6" />
           </button>
           <div>
-            <h1 className="text-slate-900">Dashboard</h1>
+            <h1 className="text-slate-900">{title}</h1>
             <p className="text-sm text-slate-400 hidden sm:block">Manage and automate your social presence</p>
           </div>
         </header>
