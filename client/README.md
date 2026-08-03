@@ -9,7 +9,6 @@ The React Compiler is enabled on this template. See [this documentation](https:/
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
 ```js
 export default defineConfig([
