@@ -15,6 +15,14 @@ const Sidebar = ({
           <img src="/logo.svg" alt="Logo" className="size-6" /> Sociro
         </div>
       </div>
+      {/* Navigation Selection */}
+      <div className="px-6 py-2">
+        <span className="text-xs text-slate-500 uppercase tracking-wider">Menu</span>
+      </div>
+      {/* Nav Links */}
+      <nav className="flex-1 px-3 space-y-1">
+        {}
+        </nav>
     </div>
   );
 };
