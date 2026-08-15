@@ -4,6 +4,7 @@ import {
   UsersIcon,
   Wand2Icon,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = ({
   isOpen,
@@ -12,6 +13,7 @@ const Sidebar = ({
   isOpen: boolean;
   setIsOpen: (val: boolean) => void;
 }) => {
+  const location = useLocation();
   const navItems = [
     { name: "Dashboard", icon: LayoutDashboardIcon, path: "/dashboard" },
     { name: "Accounts", icon: UsersIcon, path: "/accounts" },
@@ -35,7 +37,9 @@ const Sidebar = ({
         </span>
       </div>
       {/* Nav Links */}
-      <nav className="flex-1 px-3 space-y-1">{navItems.map((item)=>{})}</nav>
+      <nav className="flex-1 px-3 space-y-1">{navItems.map((item)=>{
+        const isActive = location.pathname === item.path;
+      })}</nav>
     </div>
   );
 };
