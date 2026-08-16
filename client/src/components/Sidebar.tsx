@@ -4,7 +4,7 @@ import {
   UsersIcon,
   Wand2Icon,
 } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Sidebar = ({
   isOpen,
@@ -39,6 +39,7 @@ const Sidebar = ({
       {/* Nav Links */}
       <nav className="flex-1 px-3 space-y-1">{navItems.map((item)=>{
         const isActive = location.pathname === item.path;
+        return(<NavLink></NavLink>)
       })}</nav>
     </div>
   );
