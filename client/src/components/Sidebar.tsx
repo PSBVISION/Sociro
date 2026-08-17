@@ -37,10 +37,32 @@ const Sidebar = ({
         </span>
       </div>
       {/* Nav Links */}
-      <nav className="flex-1 px-3 space-y-1">{navItems.map((item)=>{
-        const isActive = location.pathname === item.path;
-        return(<NavLink></NavLink>)
-      })}</nav>
+      <nav className="flex-1 px-3 space-y-1">
+        {navItems.map((item) => {
+          const isActive = location.pathname === item.path;
+          return (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              end={item.path === "/dashboard"}
+              onClick={() => setIsOpen(false)}
+              className={`flex items-center gap-3 px-3 py-2.5 rounded text-sm transition-all duration-150 border ${isActive ?"bg-amber-50 text-red-500 border-red-100" : "text-slate-500 hover:bg-slate-50 border-transparent hover:text-slate-700"}`}
+            >
+              <item.icon
+                className={`size-4.5 shrink-0 ${isActive ? "text-red-500" : "text-slate-500"}`}
+              />
+              {item.name}
+              {isActive && (
+                <span className="ml-auto w-[5px] h-5 rounded-full bg-red-500" />
+              )}
+            </NavLink>
+          );
+        })}
+      </nav>
+      {/* User Footer */}
+      <div className="p-4 border-t border-slate-100">
+<div className="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50"></div>
+      </div>
     </div>
   );
 };
