@@ -1,4 +1,4 @@
-import { CheckCircleIcon, ClockIcon, Share2Icon } from "lucide-react";
+import { CheckCircleIcon, ClockIcon, Share2Icon, TrendingUpIcon } from "lucide-react";
 import { useState } from "react";
 
 const Dashboard = () => {
@@ -11,23 +11,22 @@ const Dashboard = () => {
   const statCards = [
     {
       label: "Scheduled Posts",
-      value: "stats.scheduled",
+      value: stats.scheduled,
       icon: ClockIcon,
       trend: "+2 today",
     },
     {
       label: "Published Posts",
-      value: "stats.published",
+      value: stats.published,
       icon: CheckCircleIcon,
       trend: "All Time",
     },
     {
       label: "Connected Accounts",
-      value: "stats.connectedAccounts",
+      value: stats.connectedAccounts,
       icon: Share2Icon,
       trend: "Active",
     },
-    
   ];
   return (
     <div className="space-y-8">
@@ -39,7 +38,20 @@ const Dashboard = () => {
         </p>
       </div>
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {statCards.map((card) => (
+          <div
+            key={card.label}
+            className="bg-white hover:bg-red-50 relative border border-slate-200 rounded-2xl p-5 hover:border-red-200 transition-all"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div>{card.value}</div>
+              <div><TrendingUpIcon className="size-3"/>{card.trend}</div>
+            </div>
+            <p>{card.label}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
