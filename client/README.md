@@ -16,15 +16,16 @@ Sociro is a social media scheduler for Twitter, Facebook, Instagram, LinkedIn, a
 To get started with Sociro, follow these steps:
 
 1. Clone the repository
-2. Install dependencies
-3. Configure your social media accounts
-4. Start scheduling posts
+2. Enter the client directory
+3. Install dependencies
+4. Start the Vite development server
 
 ## Installation
 
 ```bash
+cd client
 npm install
-npm start
+npm run dev
 ```
 
 ## Supported Platforms
