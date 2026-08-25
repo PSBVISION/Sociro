@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 const Accounts = () => {
   const [accounts, setAccounts] = useState<any[]>([]);
+  const [connecting,setConnecting] = useState<string | null>(null);
+  const [showPlatformPicker, setShowPlatformPicker] = useState(false);
   return (
     <div className="space-y-8 max-w-4xl">
       {/* Header */}
